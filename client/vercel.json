@@ -1,1 +1,6 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+{
+	"rewrites": [
+		{ "source": "/api/(.*)", "destination": "https://property-develoepr-zfiu.vercel.app/api/$1" },
+		{ "source": "/(.*)", "destination": "/index.html" }
+	]
+}
