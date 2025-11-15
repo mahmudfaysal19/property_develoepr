@@ -17,6 +17,11 @@ app.use('/api/residency', residencyRoute)
 
 // When running locally (development), start a listener.
 // On Vercel (serverless) the app will be wrapped by the platform, so we export it.
+// Quick healthcheck route so visiting the project root shows a useful message.
+app.get('/', (req, res) => {
+    res.send('API is running');
+});
+
 if (process.env.NODE_ENV !== 'production' && process.env.VERCEL !== '1') {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, ()=> {
